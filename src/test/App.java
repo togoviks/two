@@ -14,7 +14,7 @@ public class App {
         addProduct("Творог", 5, 60);
         addProduct("Хлеб", 2, 40);
         addProduct("Мясо", 1, 110);
-        addProduct("Спички", 12, 100);
+        addProduct("СОСИСОЧКИ", 12, 100);
         printAllProducts();
     }
 
