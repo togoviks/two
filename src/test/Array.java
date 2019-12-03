@@ -13,6 +13,7 @@ class Array {
             humans.add(Vlad);
             humans.add(Nikita);
 
+
             for (int i = 0; i < 3; i++) {
                 System.out.println(humans.get(i).name);
             }
