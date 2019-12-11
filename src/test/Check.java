@@ -11,19 +11,22 @@ public class Check {
     }
 
     public void addProduct(String productName, int productPrice, int productQuantity) {
-        Product productObject = new Product(productName, productPrice, productQuantity);
-        productList.add(productObject);
+        productList.add(new Product(productName, productPrice, productQuantity));
     }
 
     public void info() {
         for (int i = 0; i < productList.size(); i++) {
             System.out.print(productList.get(i).name);
-            for (int j = 0; j < (getLongWord() + 1) - productList.get(i).name.length(); j++) {
-                System.out.print(" ");
-            }
+            setSpace(i);
             System.out.println(productList.get(i).quantity + " шт. по " + productList.get(i).price + " руб.");
         }
         System.out.println("Общая стоимость: " + fullPrice());
+    }
+
+    private void setSpace(int i) {
+        for (int j = 0; j < (getLongWord() + 1) - productList.get(i).name.length(); j++) {
+            System.out.print(" ");
+        }
     }
 
     private int getLongWord() {
