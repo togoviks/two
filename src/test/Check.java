@@ -4,11 +4,6 @@ import java.util.ArrayList;
 
 public class Check {
     private ArrayList<Product> productList = new ArrayList<>();
-    private String name;
-
-    public Check(String name) {
-        this.name = name;
-    }
 
     public void addProduct(String productName, int productPrice, int productQuantity) {
         productList.add(new Product(productName, productPrice, productQuantity));
