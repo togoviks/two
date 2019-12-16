@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Check {
     private ArrayList<Product> productList = new ArrayList<>();
-    String name;
+    private String name;
 
     public Check(String name) {
         this.name = name;
@@ -16,15 +16,15 @@ public class Check {
 
     public void info() {
         for (int i = 0; i < productList.size(); i++) {
-            System.out.print(productList.get(i).name);
+            System.out.print(productList.get(i).getProductName());
             setSpace(i);
-            System.out.println(productList.get(i).quantity + " шт. по " + productList.get(i).price + " руб.");
+            System.out.println(productList.get(i).getProductQuantity() + " шт. по " + productList.get(i).getProductPrice() + " руб.");
         }
         System.out.println("Общая стоимость: " + fullPrice());
     }
 
     private void setSpace(int i) {
-        for (int j = 0; j < (getLongWord() + 1) - productList.get(i).name.length(); j++) {
+        for (int j = 0; j < (getLongWord() + 1) - productList.get(i).getProductName().length(); j++) {
             System.out.print(" ");
         }
     }
@@ -32,8 +32,8 @@ public class Check {
     private int getLongWord() {
         int number = 0;
         for (int i = 0; i < productList.size(); i++) {
-            if (number < productList.get(i).name.length()) {
-                number = productList.get(i).name.length();
+            if (number < productList.get(i).getProductName().length()) {
+                number = productList.get(i).getProductName().length();
             }
         }
         return number;
@@ -42,7 +42,7 @@ public class Check {
     private int fullPrice() {
         int price = 0;
         for (int i = 0; i < productList.size(); i++) {
-            price = price + (productList.get(i).price * productList.get(i).quantity);
+            price = price + (productList.get(i).getProductPrice() * productList.get(i).getProductQuantity());
         }
         return price;
     }

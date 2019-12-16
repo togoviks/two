@@ -2,7 +2,7 @@ package test;
 
 public class Console {
 
-        void exe() {
+       public void exe() {
             Check check = new Check("one");
             check.addProduct("Молоко", 50, 1);
             check.addProduct("Хлеб", 15, 3);
